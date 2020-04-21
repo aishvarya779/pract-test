@@ -18,7 +18,10 @@ export class SharedService {
       }
     );
   }
-
+  
+  getLoadingStatus(): Observable<boolean>{
+  	return this.showSpinnerSubject$.asObservable();
+  }
   getSessionToken() {
     if (!this.sessionToken) {
       this.sessionToken = localStorage.getItem('sessionToken');
